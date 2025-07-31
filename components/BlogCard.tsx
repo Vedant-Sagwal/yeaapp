@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 
 function BlogCard({ post }: { post: BlogCardType }) {
   return (
-    <li className=" mt-5 bg-white border-[5px] border-black py-6 px-5 rounded-[22px] shadow-200 hover:border-[#ffffff] transition-all duration-500 hover:shadow-300 hover:bg-[#FFE8F0] group">
+    <li className=" mt-5 bg-[#eecfd7] border-[5px] border-black py-6 px-5 rounded-[22px] shadow-200 hover:border-[#ffffff] transition-all duration-500 hover:shadow-300 hover:bg-[#FFE8F0] group">
       <div className="flex justify-between items-center">
         <p className="font-medium text-[16px] bg-[#FFE8F0] px-4 py-2 rounded-full group-hover:bg-white-100">
           {convertDate(post._createdAt)}

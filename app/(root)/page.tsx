@@ -13,6 +13,16 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ q
     category: "editor",
     title: "neovim",
   },
+  {
+    _createdAt: new Date(),
+    views: 55,
+    author: { _id: 1, name: "Vedant Sagwal" },
+    _id: 2,
+    description: "This is description",
+    image: "https://upload.wikimedia.org/wikipedia/commons/3/3a/Neovim-mark.svg",
+    category: "editor",
+    title: "neovim",
+  },
 
   ];
   return (
