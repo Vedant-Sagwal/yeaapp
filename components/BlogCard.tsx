@@ -3,6 +3,10 @@ import { EyeIcon } from "lucide-react"
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { Author } from "@sanity/types";
+import { Blog } from "@sanity/types";
+
+export type BlogCardType = Omit<Blog, "author"> & { author?: Author }
 
 function BlogCard({ post }: { post: BlogCardType }) {
   return (
@@ -31,10 +35,10 @@ function BlogCard({ post }: { post: BlogCardType }) {
       </div>
       <Link href={`/blog/${post._id}`}>
         <p className="font-normal text-[16px] line-clamp-2 my-3 text-black-100 break-all">{post.description}</p>
-        <img src={post.image} alt="placeholder" className="w-full h-[164px] rounded-[10px] object-cover" />
+        <img src={post.image} alt="placeholder" className="w-full h-[164px] rounded-[10px] object-contain" />
       </Link>
       <div className="flex justify-between items-center gap-3 mt-5">
-        <Link href={`/?query=${post.category.toLowerCase()}`}>
+        <Link href={`/?query=${post.category?.toLowerCase()}`}>
           <p className=" font-medium text-[16px] text-black">{post.category}</p>
         </Link>
         <Button className="rounded-full bg-black font-medium text-[16px] text-white px-5 py-3 !important" asChild>

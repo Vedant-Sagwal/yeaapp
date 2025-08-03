@@ -14,7 +14,12 @@
     "react-dom": "$react-dom"
   },
   "dependencies": {
+    "@codemirror/basic-setup": "^0.20.0",
+    "@codemirror/lang-javascript": "^6.2.4",
+    "@codemirror/state": "^6.5.2",
+    "@codemirror/view": "^6.38.1",
     "@radix-ui/react-slot": "^1.2.3",
+    "@replit/codemirror-vim": "^6.3.0",
     "@sanity/image-url": "^1.1.0",
     "@sanity/vision": "^3.99.0",
     "@tailwindcss/typography": "github:tailwindcss/typography",

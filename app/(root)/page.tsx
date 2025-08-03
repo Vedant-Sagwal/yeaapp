@@ -1,30 +1,14 @@
 import SearchBlog from "../../components/searchBlog";
-import BlogCard from "../../components/BlogCard";
+import BlogCard, { BlogCardType } from "../../components/BlogCard";
+import { client } from "@/sanity/lib/client";
+import { blog_queries } from "@/sanity/lib/queries";
+
 
 export default async function Home({ searchParams }: { searchParams: Promise<{ query: string }> }) {
   const query = (await searchParams).query;
-  const posts = [{
-    _createdAt: new Date(),
-    views: 55,
-    author: { _id: 1, name: "Vedant Sagwal" },
-    _id: 1,
-    description: "This is description",
-    image: "https://upload.wikimedia.org/wikipedia/commons/3/3a/Neovim-mark.svg",
-    category: "editor",
-    title: "neovim",
-  },
-  {
-    _createdAt: new Date(),
-    views: 55,
-    author: { _id: 1, name: "Vedant Sagwal" },
-    _id: 2,
-    description: "This is description",
-    image: "https://upload.wikimedia.org/wikipedia/commons/3/3a/Neovim-mark.svg",
-    category: "editor",
-    title: "neovim",
-  },
 
-  ];
+  const posts = await client.fetch(blog_queries);
+
   return (
     <div>
       <section className="w-full bg-primary min-h-[530px]  flex justify-center items-center flex-col py-10 px-6">
