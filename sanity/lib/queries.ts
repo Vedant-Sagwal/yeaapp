@@ -28,3 +28,20 @@ export const views_queries = defineQuery(`*[_type == "blog" && _id == $id][0] {
 export const author_github_queries = defineQuery(`*[_type=="author" && id == $id][0] {
   _id, id, name, username, email, image, bio
 }`)
+export const author_id_queries = defineQuery(`*[_type=="author" && _id == $id][0] {
+  _id, id, name, username, email, image, bio
+}`)
+
+export const blogs_author_queries = defineQuery(`* [_type == "blog" && author._ref == $id]| order(_createdAt desc) {
+  _id,
+  title,
+  desciption,
+  category,
+  _createdAt,
+  author -> {
+  _id, name, image, bio
+  },
+  views,
+  image,
+  slug 
+}`);

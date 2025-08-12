@@ -10,7 +10,7 @@ const View = async ({ id }: { id: string }) => {
   await writeClient.patch(id).set({ views: totalViews + 1 }).commit()
 
   return (
-    <div className="flex justify-end items-center mt-5 fixed bottom-3 right-3">
+    <div className="flex justify-end items-center mt-5 fixed bottom-3 left-1/2 -translate-x-1/2">
       <div className="absolute -top-2 -right-2">
         <Ping />
       </div>
