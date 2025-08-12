@@ -3,8 +3,8 @@ import { EyeIcon } from "lucide-react"
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Author } from "@sanity/types";
-import { Blog } from "@sanity/types";
+import { Author } from "@/sanity/types"
+import { Blog } from "@/sanity/types";
 
 export type BlogCardType = Omit<Blog, "author"> & { author?: Author }
 
@@ -34,7 +34,7 @@ function BlogCard({ post }: { post: BlogCardType }) {
         </Link>
       </div>
       <Link href={`/blog/${post._id}`}>
-        <p className="font-normal text-[16px] line-clamp-2 my-3 text-black-100 break-all">{post.description}</p>
+        <p className="font-normal text-[16px] line-clamp-2 my-3 text-black-100 break-all">{post.desciption}</p>
         <img src={post.image} alt="placeholder" className="w-full h-[164px] rounded-[10px] object-contain" />
       </Link>
       <div className="flex justify-between items-center gap-3 mt-5">

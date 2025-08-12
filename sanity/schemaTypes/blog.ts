@@ -11,10 +11,6 @@ export const blog = defineType({
       type: 'string'
     }),
     defineField({
-      name: 'id',
-      type: 'number'
-    }),
-    defineField({
       name: 'views',
       type: 'number'
     }),

@@ -20,7 +20,6 @@ export type Blog = {
   _updatedAt: string;
   _rev: string;
   title?: string;
-  id?: number;
   views?: number;
   author?: {
     _ref: string;
