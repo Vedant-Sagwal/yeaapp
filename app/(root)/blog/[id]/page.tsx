@@ -35,7 +35,7 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
 
         <div className="space-y-5 mt-10 max-w-4xl mx-auto">
           <div className="flex justify-between items-center gap-5 shadow-2xl">
-            <Link href={`/user/${posts.author?.id}`} className="flex gap-2 items-center mb-3">
+            <Link href={`/user/${posts.author?._id}`} className="flex gap-2 items-center mb-3">
               <Image src={posts.author?.image || "https://upload.wikimedia.org/wikipedia/commons/f/f8/Odin%2C_der_G%C3%B6ttervater.jpg"} alt="avatar" width={64} height={64} className="rounded-full drop-shadow-lg" />
               <div>
                 <p className="font-medium text-[20px] text-black">{posts.author?.name}</p>
